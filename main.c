@@ -24,9 +24,22 @@ void initialisationGrille() {
     {
         for (int j = 0; j < LARGEUR; j++)
         {
-            grille[i][j] = ' ';
+            grille[i][j] = '.';
         }
         
+    }
+    
+}
+
+void affichageGrille()
+{
+    for (int i = 0; i < HAUTEUR; i++)
+    {
+        for (int j = 0; j < LARGEUR; j++)
+        {
+            printf("%c", grille[i][j]);
+        }
+        printf("\n");
     }
     
 }
@@ -50,6 +63,11 @@ int main() {
     affichagePosition(joueur);
     printf("Cible :");
     affichagePosition(cible);
+
+    positionnerObjet(joueur, 'J');
+    positionnerObjet(cible, 'C');
+
+    affichageGrille();
 
     return EXIT_SUCCESS;
 }
